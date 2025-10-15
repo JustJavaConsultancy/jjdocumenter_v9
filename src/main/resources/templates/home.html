@@ -1,0 +1,104 @@
+    <!DOCTYPE html>
+            <html xmlns:th="http://www.thymeleaf.org" 
+                  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+                  layout:decorate="~{layout}">
+            <head>
+                <title th:text="${appName} + ' - Home'">Home</title>
+            </head>
+            <body>
+                <div layout:fragment="content">
+                    ```html
+<body>
+    <!-- Hero Section -->
+    <section class="bg-light py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Welcome to the Alumni Transcripts and Certificate Request System</h1>
+            <p class="lead">A secure and efficient platform for Nigerian higher institutions to manage academic record requests.</p>
+            <div class="d-flex justify-content-center">
+                <a th:if="${!isLoggedIn}" href="/login" class="btn btn-primary btn-lg me-2">Login</a>
+                <a th:if="${!isLoggedIn}" href="/register" class="btn btn-secondary btn-lg">Register</a>
+                <a th:if="${isLoggedIn}" href="/dashboard" class="btn btn-primary btn-lg">Go to Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brief Description -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">About Our System</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Our system is designed to support graduates in requesting their academic transcripts and certificates while enabling institutional staff to process these requests efficiently. The platform ensures compliance with Nigerian regulations and provides a secure environment for all users.</p>
+                </div>
+                <div class="col-md-6">
+                    <p>With our system, graduates can easily submit requests, make payments, and track the status of their requests. Institutional staff can validate requests, generate secure documents, and manage system settings. The system also provides auditors with access to reports and logs for transparency and accountability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Summary Area -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Key Features</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Alumni Portal</h3>
+                            <p class="card-text">Graduates can request academic transcripts and certificates, make payments, track the status of their requests, and download approved documents.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Staff Console</h3>
+                            <p class="card-text">Institutional staff can validate academic records, approve or reject requests, and generate secure documents.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Secure Document Management</h3>
+                            <p class="card-text">The system ensures that all documents are securely stored and can be accessed only by authorized users. Graduates can also verify the authenticity of their documents via a public verification page or API.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Information -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Additional Information</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Technology Stack</h3>
+                    <ul>
+                        <li>Backend Frameworks: Spring Boot for building RESTful services and handling business logic.</li>
+                        <li>Frontend Frameworks: Thymeleaf for server-side rendering and HTMX for dynamic content loading.</li>
+                        <li>Databases: PostgreSQL for relational data storage and MongoDB with GridFS for document management.</li>
+                        <li>Realtime Data transfer: WebSockets for real-time notifications.</li>
+                        <li>Messaging/Event Streaming: RabbitMQ for asynchronous communication and event handling.</li>
+                        <li>Authentication/Authorization: Keycloak for identity management and OAuth2.1 for secure access.</li>
+                        <li>Testing Framework: Cucumber for behavior-driven testing and JUnit for unit tests.</li>
+                        <li>Document Management: GridFS for storing documents and MinIO for object storage.</li>
+                        <li>Deployment Options: Docker for containerization and GitHub Actions for CI/CD.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Compliance and Security</h3>
+                    <p>The system is designed to comply with Nigerian regulations, including the Nigeria Data Protection Regulation (NDPR). It implements robust authentication and encryption to ensure the security of user data and documents.</p>
+                    <p>The system also provides role-based access control (RBAC) to ensure that users can only access the information and features that are relevant to their roles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+```
+                </div>
+            </body>
+            </html>
